@@ -13,6 +13,11 @@ class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: CLTypingLabel!
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,5 +34,9 @@ class WelcomeViewController: UIViewController {
 //        }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
 
 }
